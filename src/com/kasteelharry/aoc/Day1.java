@@ -2,18 +2,15 @@ package com.kasteelharry.aoc;
 
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.InvalidPathException;
-import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class DayOne extends Day {
+public class Day1 extends Day {
 
     private static final String FILENAME = "\\input\\day1.txt";
 
-    public DayOne() {
+    public Day1() {
         super(FILENAME);
     }
 
@@ -42,7 +39,7 @@ public class DayOne extends Day {
 
 
     public static void main(String[] args) throws IOException {
-        DayOne dayOne = new DayOne();
+        Day1 dayOne = new Day1();
         dayOne.start();
 
 
