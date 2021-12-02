@@ -30,15 +30,13 @@ public class Day1 extends Day {
 
     public void start() {
         super.convertLinesFromFile();
-        super.convertToIntegers();
-        List<Integer> list =
-                super.getLines().stream().map(e -> (int) e).collect(Collectors.toList());
+        List<Integer> list = super.convertToIntegers();
         System.out.println(calcNextHigher(list));
         System.out.println(calcSlidingWindow(list));
     }
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Day1 dayOne = new Day1();
         dayOne.start();
 

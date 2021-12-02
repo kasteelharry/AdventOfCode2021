@@ -12,23 +12,30 @@ public class Day {
 
     private String filePath;
     private boolean isTest;
-    private List<Object> lines;
+    private List<String> lines;
+    private final int expectedValue;
 
     public Day(String filePath) {
-        this(filePath, true);
+        this.filePath = filePath;
+        this.expectedValue = 0;
     }
 
-    public Day(String filePath, boolean test) {
+    public Day(String filePath, boolean test, int exp) {
         this.filePath = filePath;
         this.isTest = test;
+        this.expectedValue = exp;
     }
 
-    public void run() {
-
-    }
-
-    public List<Object> getLines() {
+    public List<String> getLines() {
         return lines;
+    }
+
+    public int getExpectedValue() {
+        return expectedValue;
+    }
+
+    public boolean isTest() {
+        return isTest;
     }
 
     public void convertLinesFromFile() {
@@ -42,12 +49,13 @@ public class Day {
         }
     }
 
-    public void convertToIntegers() {
+    public List<Integer> convertToIntegers() {
         try {
-            this.lines =
-                    this.lines.stream().map(s -> Integer.parseInt((String) s)).collect(Collectors.toList());
+            return
+                    this.lines.stream().map(Integer::parseInt).collect(Collectors.toList());
         } catch (NumberFormatException ignored) {
             System.err.println("List contained a non-integer.");
         }
+        return null;
     }
 }
