@@ -1,4 +1,4 @@
-# Advent of Code 2020 solutions
+# Advent of Code 2021 solutions
 
 This repository contains all the code I used to solve the challenges
 in the [Advent of code 2021](https://adventofcode.com/2021).
@@ -14,7 +14,7 @@ switch.
 | ----| ------------------------------------------------ |
 | 1   | [Solution](src/com/kasteelharry/aoc/Day1.java)   |
 | 2   | [Solution](src/com/kasteelharry/aoc/Day2.java)   |
-| 3   | [Solution](src/com/kasteelharry/aoc/Day2.java)   |
+| 3   | [Solution](src/com/kasteelharry/aoc/Day3.java)   |
 | 4   | TBD                                              |
 | 5   | TBD                                              |
 | 6   | TBD                                              |
