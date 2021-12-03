@@ -14,7 +14,7 @@ switch.
 | ----| ------------------------------------------------ |
 | 1   | [Solution](src/com/kasteelharry/aoc/Day1.java)   |
 | 2   | [Solution](src/com/kasteelharry/aoc/Day2.java)   |
-| 3   | TBD                                              |
+| 3   | [Solution](src/com/kasteelharry/aoc/Day2.java)   |
 | 4   | TBD                                              |
 | 5   | TBD                                              |
 | 6   | TBD                                              |
