@@ -14,16 +14,18 @@ public abstract class Day {
     private boolean isTest;
     private List<String> lines;
     private final int expectedValue;
+    private boolean isPartTwo;
 
     public Day(String filePath) {
         this.filePath = filePath;
         this.expectedValue = 0;
     }
 
-    public Day(String filePath, boolean test, int exp) {
+    public Day(String filePath, boolean partTwo, int exp) {
         this.filePath = filePath;
-        this.isTest = test;
+        this.isTest = true;
         this.expectedValue = exp;
+        this.isPartTwo = partTwo;
     }
 
     public List<String> getLines() {
@@ -67,7 +69,11 @@ public abstract class Day {
         System.out.println("############# Advent of Code 2021 #############");
         convertLinesFromFile();
         if (isTest) {
-            runTest();
+            if (isPartTwo) {
+                runTestPartTwo();
+            } else {
+                runTest();
+            }
         } else {
             System.out.print("\n\tYour answer for part one is: ");
             start();
@@ -81,6 +87,12 @@ public abstract class Day {
     public void runTest() {
         System.out.print("\n\tYour value is:              ");
         start();
+        System.out.print("\n\tThe expected value was:     " + expectedValue);
+    }
+
+    public void runTestPartTwo() {
+        System.out.print("\n\tYour value is:              ");
+        startPart2();
         System.out.print("\n\tThe expected value was:     " + expectedValue);
     }
 }
