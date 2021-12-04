@@ -8,7 +8,7 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Day {
+public abstract class Day {
 
     private String filePath;
     private boolean isTest;
@@ -57,5 +57,30 @@ public class Day {
             System.err.println("List contained a non-integer.");
         }
         return null;
+    }
+
+    public abstract void start();
+
+    public abstract void startPart2();
+
+    public void run() {
+        System.out.println("############# Advent of Code 2021 #############");
+        convertLinesFromFile();
+        if (isTest) {
+            runTest();
+        } else {
+            System.out.print("\n\tYour answer for part one is: ");
+            start();
+            System.out.print("\n\tYour answer for part two is: ");
+            startPart2();
+        }
+
+        System.out.println("\n############# Advent of Code 2021 #############");
+    }
+
+    public void runTest() {
+        System.out.print("\n\tYour value is:              ");
+        start();
+        System.out.print("\n\tThe expected value was:     " + expectedValue);
     }
 }

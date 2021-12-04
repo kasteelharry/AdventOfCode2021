@@ -29,18 +29,18 @@ public class Day1 extends Day {
     }
 
     public void start() {
-        super.convertLinesFromFile();
         List<Integer> list = super.convertToIntegers();
-        System.out.println(calcNextHigher(list));
-        System.out.println(calcSlidingWindow(list));
+        System.out.println("Part one: " + calcNextHigher(list));
+    }
+
+    public void startPart2() {
+        List<Integer> list = super.convertToIntegers();
+        System.out.println("Part two: " + calcSlidingWindow(list));
     }
 
 
     public static void main(String[] args) {
         Day1 dayOne = new Day1();
-        dayOne.start();
-
-
-        System.out.println("Done");
+        dayOne.run();
     }
 }

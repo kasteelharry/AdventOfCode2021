@@ -91,47 +91,34 @@ public class Day2 extends Day {
 
 
     public void start() {
-        super.convertLinesFromFile();
         List<String[]> input =
                 getLines().stream().map(s -> s.split("\\s")).collect(Collectors.toList());
         for (String[] cmd :
                 input) {
             parseCommand(cmd);
         }
-        if (isTest()) {
-           System.out.println("Expected value is: " + getExpectedValue());
-        } else {
-            System.out.println("Your answer is: ");
-        }
 
-        System.out.println("Calculated value is: " + xPos * yPos);
+        System.out.println(xPos * yPos);
     }
 
     public void startPart2() {
-        super.convertLinesFromFile();
+        this.xPos = 0;
+        this.yPos = 0;
+        this.depth = 0;
         List<String[]> input =
                 getLines().stream().map(s -> s.split("\\s")).collect(Collectors.toList());
         for (String[] cmd :
                 input) {
             parseCommand2(cmd);
         }
-        if (isTest()) {
-            System.out.println("Expected value is: " + getExpectedValue());
-        } else {
-            System.out.println("Your answer is: ");
-        }
 
-        System.out.println("Calculated value is: " + xPos * depth);
+        System.out.println(xPos * depth);
     }
 
     public static void main(String[] args) {
         Day2 day = new Day2(150);
-        day.start();
+        day.run();
         Day2 day2 = new Day2();
-        day2.start();
-        Day2 dayP2 = new Day2(900);
-        dayP2.startPart2();
-        Day2 day2P2 = new Day2();
-        day2P2.startPart2();
+        day2.run();
     }
 }
