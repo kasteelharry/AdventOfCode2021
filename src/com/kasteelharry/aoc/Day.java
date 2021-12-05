@@ -21,6 +21,12 @@ public abstract class Day {
         this.expectedValue = 0;
     }
 
+    public Day(String filePath, boolean partTwo) {
+        this.filePath = filePath;
+        this.expectedValue = 0;
+        this.isPartTwo = partTwo;
+    }
+
     public Day(String filePath, boolean partTwo, int exp) {
         this.filePath = filePath;
         this.isTest = true;
@@ -38,6 +44,10 @@ public abstract class Day {
 
     public boolean isTest() {
         return isTest;
+    }
+
+    public boolean isPartTwo() {
+        return isPartTwo;
     }
 
     public void convertLinesFromFile() {
@@ -75,10 +85,16 @@ public abstract class Day {
                 runTest();
             }
         } else {
-            System.out.print("\n\tYour answer for part one is: ");
-            start();
-            System.out.print("\n\tYour answer for part two is: ");
-            startPart2();
+            if (isPartTwo) {
+                System.out.print("\n\tYour answer for part two is: ");
+                startPart2();
+            } else {
+                System.out.print("\n\tYour answer for part one is: ");
+                start();
+                System.out.print("\n\tYour answer for part two is: ");
+                startPart2();
+            }
+
         }
 
         System.out.println("\n############# Advent of Code 2021 #############");
