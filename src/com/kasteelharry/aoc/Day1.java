@@ -10,8 +10,8 @@ public class Day1 extends Day {
 
     private static final String FILENAME = "\\input\\day1.txt";
 
-    public Day1() {
-        super(FILENAME);
+    public Day1(boolean partTwo) {
+        super(FILENAME, partTwo);
     }
 
     public long calcNextHigher(List<Integer> list) {
@@ -40,7 +40,9 @@ public class Day1 extends Day {
 
 
     public static void main(String[] args) {
-        Day1 dayOne = new Day1();
+        Day1 dayOne = new Day1(false);
+        dayOne.run();
+        dayOne = new Day1(true);
         dayOne.run();
     }
 }

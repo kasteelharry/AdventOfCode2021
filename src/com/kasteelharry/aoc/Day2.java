@@ -11,15 +11,15 @@ public class Day2 extends Day {
     private int yPos;
     private int depth;
 
-    public Day2() {
-        super(FILENAME);
+    public Day2(boolean partTwo) {
+        super(FILENAME, partTwo);
         this.xPos = 0;
         this.yPos = 0;
         this.depth = 0;
     }
 
-    public Day2(int exp) {
-        super(FILENAME_TEST, true, exp);
+    public Day2(int exp, boolean partTwo) {
+        super(FILENAME_TEST, partTwo, exp);
         this.xPos = 0;
         this.yPos = 0;
         this.depth = 0;
@@ -116,9 +116,13 @@ public class Day2 extends Day {
     }
 
     public static void main(String[] args) {
-        Day2 day = new Day2(150);
+        Day2 day = new Day2(150, false);
         day.run();
-        Day2 day2 = new Day2();
+        Day2 day2 = new Day2(false);
+        day2.run();
+        day = new Day2(900, true);
+        day.run();
+        day2 = new Day2(true);
         day2.run();
     }
 }

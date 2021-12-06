@@ -13,8 +13,8 @@ public class Day4 extends Day {
     private String[][] bingo = new String[5][];
     private final List<String[][]> bingoList = new ArrayList<>();
 
-    public Day4() {
-        super(FILENAME);
+    public Day4(boolean partTwo) {
+        super(FILENAME, partTwo);
     }
 
     public Day4(int exp, boolean partTwo) {
@@ -198,9 +198,9 @@ public class Day4 extends Day {
         day.run();
         day = new Day4(1924, true);
         day.run();
-
-        Day4 day4 = new Day4();
+        Day4 day4 = new Day4(false);
         day4.run();
-
+        day4 = new Day4(true);
+        day4.run();
     }
 }

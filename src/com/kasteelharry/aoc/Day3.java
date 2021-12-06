@@ -15,8 +15,8 @@ public class Day3 extends Day {
     private final int length;
     private List<String> input;
 
-    public Day3(int length) {
-        super(FILENAME);
+    public Day3(int length, boolean partTwo) {
+        super(FILENAME, partTwo);
         this.length = length;
         setValues();
     }
@@ -142,7 +142,9 @@ public class Day3 extends Day {
         dayTest.run();
         Day3 day3Test = new Day3(5, 230, true);
         day3Test.run();
-        Day3 day3 = new Day3(12);
+        Day3 day3 = new Day3(12, false);
+        day3.run();
+        day3 = new Day3(12, true);
         day3.run();
 
     }

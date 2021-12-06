@@ -91,8 +91,6 @@ public abstract class Day {
             } else {
                 System.out.print("\n\tYour answer for part one is: ");
                 start();
-                System.out.print("\n\tYour answer for part two is: ");
-                startPart2();
             }
 
         }
