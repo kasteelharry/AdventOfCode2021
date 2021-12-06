@@ -50,11 +50,9 @@ public class Day6 extends Day {
     }
 
     private void dayCycle() {
-        int removed = 0;
         for (int i = 0; i < DAYS; i++) {
             try {
                 duplicate();
-
             } catch (OutOfMemoryError ignore){
                 System.out.println("Failed on day " + i);
                 return;
@@ -85,6 +83,7 @@ public class Day6 extends Day {
     @Override
     public void start() {
         this.inputList = getLines();
+        parseInput();
         dayCycle();
         System.out.println(fish.size());
     }
@@ -99,10 +98,12 @@ public class Day6 extends Day {
 
 
     public static void main(String[] args) {
-        Day6 dayTest = new Day6(0, true);
+        Day6 dayTest = new Day6(5934, false);
         dayTest.run();
         Day6 day6 = new Day6(false);
         day6.run();
+        dayTest = new Day6(0, true);
+        dayTest.run();
         day6 = new Day6(true);
         day6.run();
     }
