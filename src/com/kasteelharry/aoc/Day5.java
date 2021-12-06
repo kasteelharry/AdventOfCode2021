@@ -12,11 +12,6 @@ public class Day5 extends Day {
     private final List<int[][]> parsedInput = new ArrayList<>();
     private final int[][] map;
 
-    public Day5() {
-        super(FILENAME);
-        this.map = new int[1000][1000];
-    }
-
     public Day5(int exp, boolean partTwo) {
         super(FILENAME_TEST, partTwo, exp);
         this.map = new int[10][10];
