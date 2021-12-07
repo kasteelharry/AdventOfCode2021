@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Day7 extends Day {
     private static final String FILENAME = "\\input\\day7.txt";
@@ -47,7 +48,7 @@ public class Day7 extends Day {
             int[] arr = new int[input.size()];
             for (int j = 0; j < input.size(); j++) {
                 int displacement = Math.abs(input.get(j) - i);
-                arr[j] = displacement + getSum(displacement);
+                arr[j] = displacement + IntStream.range(0, displacement).sum();
             }
             int fuel = Arrays.stream(arr).sum();
             if (fuel < minOffset || minOffset < 0) {
@@ -56,15 +57,6 @@ public class Day7 extends Day {
         }
         return minOffset;
     }
-
-    private int getSum(int n) {
-        int count = 0;
-        for (int i = 0; i < n; i++) {
-            count += i;
-        }
-        return count;
-    }
-
     @Override
     public void start() {
         this.inputList = getLines();
